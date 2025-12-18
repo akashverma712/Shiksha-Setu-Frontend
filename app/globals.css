@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+/* Define font-family using the CSS variables */
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+
+/* Optional: Set a default font for the whole app */
+html {
+  font-family: var(--font-montserrat);
+}
+
