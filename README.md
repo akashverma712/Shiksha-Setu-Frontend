@@ -47,11 +47,4 @@ It provides **early detection**, automated alerts, and AI-driven counselling rec
 **Database:** MongoDB  
 **DevOps / Tools:** Redis, PM2, Nginx, Vercel  
 
----
 
-## ⚙️ Setup Instructions
-
-1. **Clone the repository**  
-```bash
-git clone https://github.com/yourusername/shiksha-setu.git
-cd shiksha-setu
