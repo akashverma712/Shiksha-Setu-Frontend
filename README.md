@@ -238,11 +238,7 @@ Injected globally via two `<script>` tags in `layout.tsx` — provides a persist
 
 ### Google Gemini 1.5 Flash
 
-Used directly from the browser in `/student/dashboard/Ai/page.tsx`:
 
-```ts
-const apiKey = 'YOUR_GEMINI_API_KEY'; // ⚠️ hardcoded — must move to env
-```
 
 Features:
 - Upload an image of notes/textbook pages → Gemini extracts the topic and generates a 5-question MCQ quiz
@@ -337,11 +333,10 @@ Create a `.env.local` file in the project root:
 NEXT_PUBLIC_API_BASE_URL=http://localhost:5000
 NEXT_PUBLIC_API_URL=http://localhost:5000
 
-# Google Gemini API (used client-side in Ai/page.tsx and Scholarship/page.tsx)
-NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+# Google Gemini API = NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-> **Important:** `NEXT_PUBLIC_GEMINI_API_KEY` is currently hardcoded as `'YOUR_GEMINI_API_KEY'` in `app/student/dashboard/Ai/page.tsx`. Move it to `.env.local` before deploying — the key is exposed in the browser bundle.
+\
 
 ---
 
@@ -383,42 +378,6 @@ npm run lint
 
 ---
 
-## Known Issues & Roadmap
 
-### Current Issues
-
-| Issue | File | Severity |
-|-------|------|----------|
-| Gemini API key hardcoded as `'YOUR_GEMINI_API_KEY'` | `student/dashboard/Ai/page.tsx` | 🔴 Key leaked in bundle |
-| Same API key hardcoded in scholarship AI writer | `student/dashboard/Scholarship/page.tsx` | 🔴 Key leaked in bundle |
-| `BB/` folder (old backend) committed to frontend repo | Root | 🟡 Repo bloat (~152KB) |
-| Many pages use `http://localhost:5000` directly instead of `api.ts` | Multiple pages | 🟡 Breaks in production |
-| `AuthContext.tsx` defined but not used by dashboards | `context/AuthContext.tsx` | 🟡 Dead code |
-| Fee details page uses static demo data | `student/dashboard/fees/page.tsx` | 🟡 Not connected to API |
-| Timetable page uses static dummy data | `teacher/dashboard/timetable/page.tsx` | 🟡 Not connected to API |
-| Student attendance trend chart is randomly generated | `student/dashboard/page.tsx` | 🟡 Misleading data |
-| Subject-wise attendance on overview is randomly generated | `student/dashboard/page.tsx` | 🟡 Misleading data |
-| `SocialSidebar` component commented out in landing page | `app/page.tsx` | 🟢 Minor |
-| SMS page commented out from teacher sidebar | `teacher/dashboard/layout.tsx` | 🟢 Minor |
-| `start.js` (debug server) sitting in `BB/` folder in frontend repo | `BB/start.js` | 🟢 Cleanup |
-
-### Roadmap
-
-- [ ] Move Gemini API key to `NEXT_PUBLIC_GEMINI_API_KEY` env variable
-- [ ] Delete `BB/` folder from this repo (it belongs in the backend repo)
-- [ ] Centralise all API calls through `app/lib/api.ts` (remove hardcoded URLs)
-- [ ] Connect fee details to a real API endpoint
-- [ ] Connect teacher timetable to `GET /api/teachers/me` → `todaySchedule`
-- [ ] Replace randomly generated attendance charts with real historical data
-- [ ] Extract inline page components (`StatCard`, `InfoCard`, etc.) to `components/`
-- [ ] Unify auth state — use `AuthContext` everywhere instead of raw `localStorage` reads
-- [ ] Add `NEXT_PUBLIC_ELEVENLABS_AGENT_ID` env variable (currently hardcoded in `layout.tsx`)
-- [ ] Add loading skeletons instead of full-page `animate-pulse` spinners
-- [ ] Responsive fixes for the login sliding panel on very small screens
-- [ ] `react-hook-form` + `zod` are installed but unused — wire up to admin/login forms
-
----
-
-## License
 
 ISC © Shiksha-Setu Contributors
