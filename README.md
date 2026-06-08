@@ -10,6 +10,12 @@
 
 ---
 
+## 🎥 Demo Video
+
+[▶ Watch Demo](.shikshasetu.mp4)
+
+---
+
 ## Table of Contents
 
 - [Overview](#overview)
