@@ -12,7 +12,9 @@
 
 ## 🎥 Demo Video
 
-[▶ Watch Demo](.shikshasetu.mp4)
+
+
+<video src="./shiksha_setu.mp4" controls width="800"></video>
 
 ---
 
