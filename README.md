@@ -9,12 +9,17 @@
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.x-0055FF?logo=framer)](https://framer.com/motion)
 
 ---
-
 ## 🎥 Demo Video
 
 
 
-<video src="./shiksha_setu.mp4" controls width="800"></video>
+Experience Shiksha-Setu in action through the project demo video:
+
+
+
+👉 **[Watch Demo Video](https://drive.google.com/file/d/13WB0mGJUXYcFqqjoimfyLpg2tKgnqBBZ/view?usp=sharing)**
+
+
 
 ---
 
